@@ -30,15 +30,12 @@
   </head>
   <body class="light-mode" dir="ltr">
     <!-- Top Navigation -->
-    <nav class="navbar"  onclick="showPage('dashboard')">
+    <nav class="navbar" onclick="showPage('dashboard')">
       <div class="nav-container">
         <div class="nav-brand">
           <i class="fas fa-graduation-cap"></i>
           <h1>Student Assistant</h1>
         </div>
-
-      <div class="nav-brand">
-  
 
         <div class="menu_toggler">
           <button class="burger-menu">
@@ -50,16 +47,13 @@
       </div>
     </nav>
 
-    <!-- menu -->
+    <!-- Mobile Menu -->
     <div class="mobile-nav" id="mobileNav">
       <a href="#dashboard" class="mobile-nav-link active" data-page="dashboard">
         <i class="fas fa-tachometer-alt"></i>
         <span>Dashboard</span>
       </a>
-      <a href="#tasks" class="mobile-nav-link" data-page="tasks">
-        <i class="fas fa-tasks"></i>
-        <span>Tasks</span>
-      </a>
+      
       <a href="#notebook" class="mobile-nav-link" data-page="notebook">
         <i class="fas fa-book"></i>
         <span>AI Notebook</span>
@@ -68,19 +62,17 @@
         <i class="fas fa-calendar-alt"></i>
         <span>Day Planner</span>
       </a>
-      <a href="#habits" class="mobile-nav-link" data-page="habits">
-        <i class="fas fa-chart-line"></i>
-        <span>Habits</span>
-      </a>
+      
       <a href="#chat" class="mobile-nav-link" data-page="chat">
         <i class="fas fa-robot"></i>
         <span>AI Chat</span>
       </a>
     </div>
+
     <!-- Main Container -->
     <div class="container">
-      <!-- Main Content -->
       <main class="main-content">
+
         <!-- Dashboard Page -->
         <div class="page active" id="dashboardPage">
           <div class="page-header">
@@ -90,32 +82,6 @@
 
           <!-- Stats Cards -->
           <div class="stats-grid">
-            <div class="stat-card">
-              <div
-                class="stat-icon"
-                style="background: linear-gradient(135deg, #4caf50, #2e7d32)"
-              >
-                <i class="fas fa-tasks"></i>
-              </div>
-              <div class="stat-info">
-                <h3 id="totalTasks">12</h3>
-                <p>Total Tasks</p>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div
-                class="stat-icon"
-                style="background: linear-gradient(135deg, #2196f3, #0d47a1)"
-              >
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div class="stat-info">
-                <h3 id="completedTasks">8</h3>
-                <p>Completed</p>
-              </div>
-            </div>
-
             <div class="stat-card">
               <div
                 class="stat-icon"
@@ -147,30 +113,19 @@
           <div class="section">
             <h3>Quick Actions</h3>
             <div class="actions-grid">
-              <button class="action-btn" onclick="showPage('tasks')">
-                <i class="fas fa-plus-circle"></i>
-                <span>Add Task</span>
+              
+              <button class="action-btn" onclick="showPage('planner')">
+                <i class="fas fa-calendar-plus"></i>
+                <span>Generate Plan</span>
               </button>
               <button class="action-btn" onclick="showPage('notebook')">
                 <i class="fas fa-upload"></i>
                 <span>Upload Document</span>
               </button>
-              <button class="action-btn" onclick="showPage('planner')">
-                <i class="fas fa-calendar-plus"></i>
-                <span>Generate Plan</span>
-              </button>
               <button class="action-btn" onclick="showPage('chat')">
                 <i class="fas fa-comment"></i>
                 <span>Ask AI</span>
               </button>
-            </div>
-          </div>
-
-          <!-- Recent Tasks -->
-          <div class="section">
-            <h3>Recent Tasks</h3>
-            <div class="tasks-list" id="recentTasks">
-              <!-- Recent tasks will be loaded here -->
             </div>
           </div>
         </div>
@@ -187,25 +142,13 @@
 
           <!-- Task Filters -->
           <div class="filters">
-            <button
-              class="filter-btn active"
-              onclick="filterTasks('all')"
-              data-status="all"
-            >
+            <button class="filter-btn active" onclick="filterTasks('all')" data-status="all">
               All
             </button>
-            <button
-              class="filter-btn"
-              onclick="filterTasks('pending')"
-              data-status="pending"
-            >
+            <button class="filter-btn" onclick="filterTasks('pending')" data-status="pending">
               Pending
             </button>
-            <button
-              class="filter-btn"
-              onclick="filterTasks('completed')"
-              data-status="completed"
-            >
+            <button class="filter-btn" onclick="filterTasks('completed')" data-status="completed">
               Completed
             </button>
           </div>
@@ -220,20 +163,13 @@
         <div class="page" id="notebookPage">
           <div class="page-header">
             <h2>AI Notebook</h2>
-            <button
-              class="btn btn-primary"
-              onclick="document.getElementById('fileInput').click()"
-            >
-              <i class="fas fa-upload"></i>
-              <span>Upload Document</span>
-            </button>
+            <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+            <i class="fas fa-upload"></i>
+            <span>Upload Document</span>
+          </button>
           </div>
 
-          <!-- Document Upload Area -->
-          <div
-            class="upload-area"
-            onclick="document.getElementById('fileInput').click()"
-          >
+          <div class="upload-area" onclick="document.getElementById('fileInput').click()">
             <i class="fas fa-cloud-upload-alt"></i>
             <h3>Drag & Drop your files here</h3>
             <p>or click to browse</p>
@@ -246,7 +182,6 @@
             <p class="file-info">Supported: PDF, DOC, TXT, Images, etc.</p>
           </div>
 
-          <!-- Document List -->
           <div class="documents-list" id="documentsList">
             <!-- Documents will be loaded here -->
           </div>
@@ -255,14 +190,13 @@
         <!-- Day Planner Page -->
         <div class="page" id="plannerPage">
           <div class="page-header">
-            <h2>Day Planner</h2>
+            <h2>Day Planner</h2>  
             <button class="btn btn-primary" onclick="generateDayPlan()">
               <i class="fas fa-magic"></i>
               <span>Generate Plan</span>
             </button>
           </div>
 
-          <!-- Plan Settings -->
           <div class="plan-settings">
             <div class="setting-group">
               <label>Wake Up Time:</label>
@@ -282,7 +216,6 @@
             </div>
           </div>
 
-          <!-- Today's Plan -->
           <div class="todays-plan">
             <h3>Today's Plan</h3>
             <div class="schedule" id="scheduleContainer">
@@ -307,49 +240,47 @@
         </div>
 
         <!-- AI Chat Page -->
-<div class="page" id="chatPage">
-  <div class="page-header">
-    <h2>AI Assistant</h2>
-  </div>
-
-      <!-- Chat Container -->
-      <div class="chat-container">
-        <div class="chat-messages" id="chatMessages">
-          <div class="message ai-message">
-            <div class="message-content">
-              <p>
-                Hello! I'm your AI assistant. How can I help you with your studies today?
-              </p>
-            </div>
+        <div class="page" id="chatPage">
+          <div class="page-header">
+            <h2>AI Assistant</h2>
           </div>
-          <div class="message ai-message">
-            <div class="message-content">
-              <p>
-                I can help you with: 📚 Study tips, 📝 Task management, 🗓️ Planning your day, 📊 Understanding concepts, and more!
-              </p>
+
+          <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+              <div class="message ai-message">
+                <div class="message-content">
+                  <p>
+                    Hello! I'm your AI assistant. How can I help you with your studies today?
+                  </p>
+                </div>
+              </div>
+              <div class="message ai-message">
+                <div class="message-content">
+                  <p>
+                    I can help you with: 📚 Study tips, 📝 Task management, 🗓️ Planning your day, 📊 Understanding concepts, and more!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-input-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 12px; background: #f9f9f9; border-top: 1px solid #ccc; border-radius: 0 0 8px 8px;">
+              <input
+                type="text"
+                id="chatInput"
+                placeholder="Type your question here..."
+                style="flex: 1; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;"
+              />
+              <select id="chatDocSelect" class="btn btn-primary" style="height: 38px; padding: 0 1rem;">
+                <option value="">No Document</option>
+              </select>
+              <button id="sendChatBtn" onclick="sendChatMessage()" class="btn btn-primary" style="height: 38px; padding: 0 1rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-paper-plane"></i>
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="chat-input-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 12px; background: #f9f9f9; border-top: 1px solid #ccc; border-radius: 0 0 8px 8px;">
-  
-        <input
-          type="text"
-          id="chatInput"
-          placeholder="Type your question here..."
-          style="flex: 1; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;"
-        />
-          <!-- Document dropdown -->
-  <select id="chatDocSelect" class="btn btn-primary" style="height: 38px; padding: 0 1rem;">
-            <option value="">No Document</option>
-            <!-- JS will populate uploaded documents here -->
-          </select>
-
-  <button id="sendChatBtn" onclick="sendChatMessage()" class="btn btn-primary" style="height: 38px; padding: 0 1rem; display: flex; align-items: center; justify-content: center;">
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </div>
-      </div>
+      </main>
     </div>
 
     <!-- Task Modal -->
@@ -357,9 +288,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3>Add New Task</h3>
-          <button class="close-modal" onclick="closeModal('taskModal')">
-            &times;
-          </button>
+          <button class="close-modal" onclick="closeModal('taskModal')">&times;</button>
         </div>
         <div class="modal-body">
           <form id="taskForm">
@@ -389,11 +318,7 @@
             <div class="form-row">
               <div class="form-group">
                 <label>Category</label>
-                <input
-                  type="text"
-                  id="taskCategory"
-                  placeholder="e.g., Study, Work"
-                />
+                <input type="text" id="taskCategory" placeholder="e.g., Study, Work" />
               </div>
               <div class="form-group">
                 <label>Estimated Minutes</label>
@@ -401,13 +326,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                onclick="closeModal('taskModal')"
-              >
-                Cancel
-              </button>
+              <button type="button" class="btn btn-secondary" onclick="closeModal('taskModal')">Cancel</button>
               <button type="submit" class="btn btn-primary">Save Task</button>
             </div>
           </form>
@@ -420,21 +339,14 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 id="habitModalTitle">Add New Habit</h3>
-          <button class="close-modal" onclick="closeModal('habitModal')">
-            &times;
-          </button>
+          <button class="close-modal" onclick="closeModal('habitModal')">&times;</button>
         </div>
         <div class="modal-body">
           <form id="habitForm">
             <input type="hidden" id="habitId" value="" />
             <div class="form-group">
               <label>Habit Name</label>
-              <input
-                type="text"
-                id="habitName"
-                required
-                placeholder="e.g., Read 30 minutes daily"
-              />
+              <input type="text" id="habitName" required placeholder="e.g., Read 30 minutes daily" />
             </div>
             <div class="form-group">
               <label>Description</label>
@@ -448,13 +360,7 @@
               </select>
             </div>
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                onclick="closeModal('habitModal')"
-              >
-                Cancel
-              </button>
+              <button type="button" class="btn btn-secondary" onclick="closeModal('habitModal')">Cancel</button>
               <button type="submit" class="btn btn-primary">Save Habit</button>
             </div>
           </form>
