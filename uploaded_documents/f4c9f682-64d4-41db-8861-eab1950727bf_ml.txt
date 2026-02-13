@@ -1,0 +1,25 @@
+Title: Introduction to Machine Learning
+
+Machine learning is a subset of artificial intelligence (AI) that allows systems to learn and improve from experience without being explicitly programmed. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning.
+
+1. Supervised Learning:
+   - The model is trained on labeled data.
+   - Examples include classification (e.g., spam detection) and regression (e.g., predicting house prices).
+
+2. Unsupervised Learning:
+   - The model finds patterns in unlabeled data.
+   - Examples include clustering (e.g., customer segmentation) and dimensionality reduction.
+
+3. Reinforcement Learning:
+   - The model learns by interacting with an environment and receiving rewards or penalties.
+   - Commonly used in robotics, gaming, and navigation tasks.
+
+Key Concepts:
+- Features: Input variables used by the model.
+- Labels: Output variables we want to predict.
+- Training: The process of teaching the model.
+- Testing: Evaluating the model's performance on unseen data.
+
+Remember, preprocessing data and selecting the right model are crucial steps in achieving good performance.
+
+End of Notes.
